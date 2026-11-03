@@ -1,0 +1,50 @@
+[
+{
+"date": "2026-11-03",
+"day": "Tue",
+"high": 68,
+"low": 51,
+"condition": "Mostly sunny",
+"precip": null
+},
+{
+"date": "2026-11-04",
+"day": "Wed",
+"high": 73,
+"low": 58,
+"condition": "Mostly sunny",
+"precip": null
+},
+{
+"date": "2026-11-05",
+"day": "Thu",
+"high": 74,
+"low": 62,
+"condition": "Mostly cloudy",
+"precip": 50
+},
+{
+"date": "2026-11-06",
+"day": "Fri",
+"high": 67,
+"low": 55,
+"condition": "Rain and storms",
+"precip": 80
+},
+{
+"date": "2026-11-07",
+"day": "Sat",
+"high": 67,
+"low": 50,
+"condition": "Mostly sunny",
+"precip": null
+},
+{
+"date": "2026-11-08",
+"day": "Sun",
+"high": 59,
+"low": 45,
+"condition": "Mostly sunny",
+"precip": null
+}
+]

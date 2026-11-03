@@ -1,0 +1,612 @@
+[
+{
+"id": "regular-1",
+"schedule": "Regular",
+"order": 1,
+"period": "HR",
+"start": "8:00",
+"end": "8:10",
+"startMin": 480,
+"endMin": 490
+},
+{
+"id": "regular-2",
+"schedule": "Regular",
+"order": 2,
+"period": "Period 1",
+"start": "8:15",
+"end": "9:15",
+"startMin": 495,
+"endMin": 555
+},
+{
+"id": "regular-3",
+"schedule": "Regular",
+"order": 3,
+"period": "Period 2",
+"start": "9:20",
+"end": "10:20",
+"startMin": 560,
+"endMin": 620
+},
+{
+"id": "regular-4",
+"schedule": "Regular",
+"order": 4,
+"period": "Period 3",
+"start": "10:25",
+"end": "11:25",
+"startMin": 625,
+"endMin": 685
+},
+{
+"id": "regular-5",
+"schedule": "Regular",
+"order": 5,
+"period": "Period 4",
+"start": "11:30",
+"end": "12:30",
+"startMin": 690,
+"endMin": 750
+},
+{
+"id": "regular-6",
+"schedule": "Regular",
+"order": 6,
+"period": "Period 5",
+"start": "12:35",
+"end": "1:35",
+"startMin": 755,
+"endMin": 815
+},
+{
+"id": "regular-7",
+"schedule": "Regular",
+"order": 7,
+"period": "Period 6",
+"start": "1:40",
+"end": "2:40",
+"startMin": 820,
+"endMin": 880
+},
+{
+"id": "community-time-1",
+"schedule": "Community Time",
+"order": 1,
+"period": "HR",
+"start": "8:00",
+"end": "8:07",
+"startMin": 480,
+"endMin": 487
+},
+{
+"id": "community-time-2",
+"schedule": "Community Time",
+"order": 2,
+"period": "Period 1",
+"start": "8:10",
+"end": "9:00",
+"startMin": 490,
+"endMin": 540
+},
+{
+"id": "community-time-3",
+"schedule": "Community Time",
+"order": 3,
+"period": "Period 2",
+"start": "9:05",
+"end": "9:55",
+"startMin": 545,
+"endMin": 595
+},
+{
+"id": "community-time-4",
+"schedule": "Community Time",
+"order": 4,
+"period": "Period 3",
+"start": "10:00",
+"end": "10:50",
+"startMin": 600,
+"endMin": 650
+},
+{
+"id": "community-time-5",
+"schedule": "Community Time",
+"order": 5,
+"period": "Community Time",
+"start": "10:55",
+"end": "11:55",
+"startMin": 655,
+"endMin": 715
+},
+{
+"id": "community-time-6",
+"schedule": "Community Time",
+"order": 6,
+"period": "Period 4",
+"start": "12:00",
+"end": "12:50",
+"startMin": 720,
+"endMin": 770
+},
+{
+"id": "community-time-7",
+"schedule": "Community Time",
+"order": 7,
+"period": "Period 5",
+"start": "12:55",
+"end": "1:45",
+"startMin": 775,
+"endMin": 825
+},
+{
+"id": "community-time-8",
+"schedule": "Community Time",
+"order": 8,
+"period": "Period 6",
+"start": "1:50",
+"end": "2:40",
+"startMin": 830,
+"endMin": 880
+},
+{
+"id": "liturgy-1",
+"schedule": "Liturgy",
+"order": 1,
+"period": "HR",
+"start": "8:00",
+"end": "8:20",
+"startMin": 480,
+"endMin": 500
+},
+{
+"id": "liturgy-2",
+"schedule": "Liturgy",
+"order": 2,
+"period": "Period 1",
+"start": "8:25",
+"end": "9:10",
+"startMin": 505,
+"endMin": 550
+},
+{
+"id": "liturgy-3",
+"schedule": "Liturgy",
+"order": 3,
+"period": "Liturgy",
+"start": "9:15",
+"end": "10:30",
+"startMin": 555,
+"endMin": 630
+},
+{
+"id": "liturgy-4",
+"schedule": "Liturgy",
+"order": 4,
+"period": "Period 2",
+"start": "10:35",
+"end": "11:20",
+"startMin": 635,
+"endMin": 680
+},
+{
+"id": "liturgy-5",
+"schedule": "Liturgy",
+"order": 5,
+"period": "Period 3",
+"start": "11:25",
+"end": "12:10",
+"startMin": 685,
+"endMin": 730
+},
+{
+"id": "liturgy-6",
+"schedule": "Liturgy",
+"order": 6,
+"period": "Period 4",
+"start": "12:15",
+"end": "1:00",
+"startMin": 735,
+"endMin": 780
+},
+{
+"id": "liturgy-7",
+"schedule": "Liturgy",
+"order": 7,
+"period": "Period 5",
+"start": "1:05",
+"end": "1:50",
+"startMin": 785,
+"endMin": 830
+},
+{
+"id": "liturgy-8",
+"schedule": "Liturgy",
+"order": 8,
+"period": "Period 6",
+"start": "1:55",
+"end": "2:40",
+"startMin": 835,
+"endMin": 880
+},
+{
+"id": "pm-meeting-1",
+"schedule": "PM Meeting",
+"order": 1,
+"period": "HR",
+"start": "8:00",
+"end": "8:07",
+"startMin": 480,
+"endMin": 487
+},
+{
+"id": "pm-meeting-2",
+"schedule": "PM Meeting",
+"order": 2,
+"period": "Period 1",
+"start": "8:10",
+"end": "9:05",
+"startMin": 490,
+"endMin": 545
+},
+{
+"id": "pm-meeting-3",
+"schedule": "PM Meeting",
+"order": 3,
+"period": "Period 2",
+"start": "9:10",
+"end": "10:05",
+"startMin": 550,
+"endMin": 605
+},
+{
+"id": "pm-meeting-4",
+"schedule": "PM Meeting",
+"order": 4,
+"period": "Period 3",
+"start": "10:10",
+"end": "11:05",
+"startMin": 610,
+"endMin": 665
+},
+{
+"id": "pm-meeting-5",
+"schedule": "PM Meeting",
+"order": 5,
+"period": "Period 4",
+"start": "11:10",
+"end": "12:05",
+"startMin": 670,
+"endMin": 725
+},
+{
+"id": "pm-meeting-6",
+"schedule": "PM Meeting",
+"order": 6,
+"period": "Period 5",
+"start": "12:10",
+"end": "1:05",
+"startMin": 730,
+"endMin": 785
+},
+{
+"id": "pm-meeting-7",
+"schedule": "PM Meeting",
+"order": 7,
+"period": "Period 6",
+"start": "1:10",
+"end": "2:05",
+"startMin": 790,
+"endMin": 845
+},
+{
+"id": "pm-meeting-8",
+"schedule": "PM Meeting",
+"order": 8,
+"period": "Meetings",
+"start": "2:10",
+"end": "3:00",
+"startMin": 850,
+"endMin": 900
+},
+{
+"id": "extended-homeroom-1",
+"schedule": "Extended Homeroom",
+"order": 1,
+"period": "HR",
+"start": "8:00",
+"end": "8:40",
+"startMin": 480,
+"endMin": 520
+},
+{
+"id": "extended-homeroom-2",
+"schedule": "Extended Homeroom",
+"order": 2,
+"period": "Period 1",
+"start": "8:45",
+"end": "9:40",
+"startMin": 525,
+"endMin": 580
+},
+{
+"id": "extended-homeroom-3",
+"schedule": "Extended Homeroom",
+"order": 3,
+"period": "Period 2",
+"start": "9:45",
+"end": "10:40",
+"startMin": 585,
+"endMin": 640
+},
+{
+"id": "extended-homeroom-4",
+"schedule": "Extended Homeroom",
+"order": 4,
+"period": "Period 3",
+"start": "10:45",
+"end": "11:40",
+"startMin": 645,
+"endMin": 700
+},
+{
+"id": "extended-homeroom-5",
+"schedule": "Extended Homeroom",
+"order": 5,
+"period": "Period 4",
+"start": "11:45",
+"end": "12:40",
+"startMin": 705,
+"endMin": 760
+},
+{
+"id": "extended-homeroom-6",
+"schedule": "Extended Homeroom",
+"order": 6,
+"period": "Period 5",
+"start": "12:45",
+"end": "1:40",
+"startMin": 765,
+"endMin": 820
+},
+{
+"id": "extended-homeroom-7",
+"schedule": "Extended Homeroom",
+"order": 7,
+"period": "Period 6",
+"start": "1:45",
+"end": "2:40",
+"startMin": 825,
+"endMin": 880
+},
+{
+"id": "pm-block-1",
+"schedule": "PM Block",
+"order": 1,
+"period": "HR",
+"start": "8:00",
+"end": "8:07",
+"startMin": 480,
+"endMin": 487
+},
+{
+"id": "pm-block-2",
+"schedule": "PM Block",
+"order": 2,
+"period": "Period 1",
+"start": "8:10",
+"end": "9:00",
+"startMin": 490,
+"endMin": 540
+},
+{
+"id": "pm-block-3",
+"schedule": "PM Block",
+"order": 3,
+"period": "Period 2",
+"start": "9:05",
+"end": "9:55",
+"startMin": 545,
+"endMin": 595
+},
+{
+"id": "pm-block-4",
+"schedule": "PM Block",
+"order": 4,
+"period": "Period 3",
+"start": "10:00",
+"end": "10:50",
+"startMin": 600,
+"endMin": 650
+},
+{
+"id": "pm-block-5",
+"schedule": "PM Block",
+"order": 5,
+"period": "Period 4",
+"start": "10:55",
+"end": "11:45",
+"startMin": 655,
+"endMin": 705
+},
+{
+"id": "pm-block-6",
+"schedule": "PM Block",
+"order": 6,
+"period": "Period 5",
+"start": "11:50",
+"end": "12:40",
+"startMin": 710,
+"endMin": 760
+},
+{
+"id": "pm-block-7",
+"schedule": "PM Block",
+"order": 7,
+"period": "Period 6",
+"start": "12:45",
+"end": "1:35",
+"startMin": 765,
+"endMin": 815
+},
+{
+"id": "pm-block-8",
+"schedule": "PM Block",
+"order": 8,
+"period": "Block",
+"start": "1:40",
+"end": "2:40",
+"startMin": 820,
+"endMin": 880
+},
+{
+"id": "am-block-1",
+"schedule": "AM Block",
+"order": 1,
+"period": "HR",
+"start": "8:00",
+"end": "8:07",
+"startMin": 480,
+"endMin": 487
+},
+{
+"id": "am-block-2",
+"schedule": "AM Block",
+"order": 2,
+"period": "Period 1",
+"start": "8:10",
+"end": "9:00",
+"startMin": 490,
+"endMin": 540
+},
+{
+"id": "am-block-3",
+"schedule": "AM Block",
+"order": 3,
+"period": "Block",
+"start": "9:05",
+"end": "10:05",
+"startMin": 545,
+"endMin": 605
+},
+{
+"id": "am-block-4",
+"schedule": "AM Block",
+"order": 4,
+"period": "Period 2",
+"start": "10:10",
+"end": "11:00",
+"startMin": 610,
+"endMin": 660
+},
+{
+"id": "am-block-5",
+"schedule": "AM Block",
+"order": 5,
+"period": "Period 3",
+"start": "11:05",
+"end": "11:55",
+"startMin": 665,
+"endMin": 715
+},
+{
+"id": "am-block-6",
+"schedule": "AM Block",
+"order": 6,
+"period": "Period 4",
+"start": "12:00",
+"end": "12:50",
+"startMin": 720,
+"endMin": 770
+},
+{
+"id": "am-block-7",
+"schedule": "AM Block",
+"order": 7,
+"period": "Period 5",
+"start": "12:55",
+"end": "1:45",
+"startMin": 775,
+"endMin": 825
+},
+{
+"id": "am-block-8",
+"schedule": "AM Block",
+"order": 8,
+"period": "Period 6",
+"start": "1:50",
+"end": "2:40",
+"startMin": 830,
+"endMin": 880
+},
+{
+"id": "2-hour-delay-1",
+"schedule": "2-Hour Delay",
+"order": 1,
+"period": "HR",
+"start": "10:00",
+"end": "10:10",
+"startMin": 600,
+"endMin": 610
+},
+{
+"id": "2-hour-delay-2",
+"schedule": "2-Hour Delay",
+"order": 2,
+"period": "Period 1",
+"start": "10:15",
+"end": "10:55",
+"startMin": 615,
+"endMin": 655
+},
+{
+"id": "2-hour-delay-3",
+"schedule": "2-Hour Delay",
+"order": 3,
+"period": "Period 2",
+"start": "11:00",
+"end": "11:40",
+"startMin": 660,
+"endMin": 700
+},
+{
+"id": "2-hour-delay-4",
+"schedule": "2-Hour Delay",
+"order": 4,
+"period": "Period 3",
+"start": "11:45",
+"end": "12:25",
+"startMin": 705,
+"endMin": 745
+},
+{
+"id": "2-hour-delay-5",
+"schedule": "2-Hour Delay",
+"order": 5,
+"period": "Period 4",
+"start": "12:30",
+"end": "1:10",
+"startMin": 750,
+"endMin": 790
+},
+{
+"id": "2-hour-delay-6",
+"schedule": "2-Hour Delay",
+"order": 6,
+"period": "Period 5",
+"start": "1:15",
+"end": "1:55",
+"startMin": 795,
+"endMin": 835
+},
+{
+"id": "2-hour-delay-7",
+"schedule": "2-Hour Delay",
+"order": 7,
+"period": "Period 6",
+"start": "2:00",
+"end": "2:40",
+"startMin": 840,
+"endMin": 880
+}
+]
