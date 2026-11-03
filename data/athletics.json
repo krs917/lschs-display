@@ -1,23 +1,13 @@
 [
 {
-"id": "2026-11-01-rowing",
-"date": "2026-11-01",
-"time": "All Day",
-"sortMin": 0,
-"sport": "Rowing",
-"opponent": "Mercer Fall Classic",
-"homeAway": "Away",
-"location": "Mercer, NJ"
-},
-{
-"id": "2026-11-02-football-jv",
-"date": "2026-11-02",
-"time": "3:45 PM",
-"sortMin": 945,
-"sport": "Football - JV",
-"opponent": "Bonner-Prendergast Catholic HS",
+"id": "2026-11-03-cross-country",
+"date": "2026-11-03",
+"time": "2:30 PM",
+"sortMin": 870,
+"sport": "Cross Country",
+"opponent": "Southeast PA JV Challenge",
 "homeAway": "Home",
-"location": "LSCHS - Flannery Turf Field"
+"location": "Downingtown West High School"
 },
 {
 "id": "2026-11-03-hockey-jvaaa-apac-founders",
@@ -50,16 +40,6 @@
 "location": "Grundy Recreation Center"
 },
 {
-"id": "2026-11-05-water-polo-varsity",
-"date": "2026-11-05",
-"time": "All Day",
-"sortMin": 0,
-"sport": "Water Polo - Varsity",
-"opponent": "First Round State Tournament",
-"homeAway": "Away",
-"location": "Upper Dublin HS, Wissahickon HS"
-},
-{
 "id": "2026-11-05-hockey-jvaaa-apac-founders",
 "date": "2026-11-05",
 "time": "4:15 PM",
@@ -70,14 +50,14 @@
 "location": "Hatfield Ice World"
 },
 {
-"id": "2026-11-06-football-varsity",
-"date": "2026-11-06",
-"time": "All Day",
-"sortMin": 0,
-"sport": "Football - Varsity",
-"opponent": "PCL Playoff 1 v 4 and 2 v 3",
-"homeAway": "TBD",
-"location": ""
+"id": "2026-11-05-water-polo-varsity",
+"date": "2026-11-05",
+"time": "6:30 PM",
+"sortMin": 1110,
+"sport": "Water Polo - Varsity",
+"opponent": "First Round State Tournament, North Allegheny Senior HS",
+"homeAway": "Away",
+"location": "Upper Dublin High School"
 },
 {
 "id": "2026-11-06-water-polo-varsity",
@@ -85,9 +65,9 @@
 "time": "All Day",
 "sortMin": 0,
 "sport": "Water Polo - Varsity",
-"opponent": "State Tournament",
+"opponent": "State Tournament (5 pm or 6 pm)",
 "homeAway": "Away",
-"location": "North Penn HS"
+"location": "North Penn High School"
 },
 {
 "id": "2026-11-07-water-polo-varsity",
@@ -97,7 +77,7 @@
 "sport": "Water Polo - Varsity",
 "opponent": "State Tournament",
 "homeAway": "Away",
-"location": "North Penn HS"
+"location": "North Penn High School"
 },
 {
 "id": "2026-11-07-rugby-sevens",
@@ -105,9 +85,19 @@
 "time": "TBD",
 "sortMin": 0,
 "sport": "Rugby Sevens",
-"opponent": "State Championship Day 1",
+"opponent": "State Championship - Day 1 @ Malvern PA",
 "homeAway": "Away",
-"location": "Malvern, PA"
+"location": ""
+},
+{
+"id": "2026-11-07-rowing",
+"date": "2026-11-07",
+"time": "All Day",
+"sortMin": 0,
+"sport": "Rowing",
+"opponent": "Frostbite Regatta, Mercer NJ",
+"homeAway": "Away",
+"location": ""
 },
 {
 "id": "2026-11-07-cross-country",
@@ -115,19 +105,9 @@
 "time": "1:00 PM",
 "sortMin": 780,
 "sport": "Cross Country",
-"opponent": "State Championship",
+"opponent": "State Championship @ Big Spring HS",
 "homeAway": "Away",
-"location": "Big Spring HS"
-},
-{
-"id": "2026-11-08-rowing",
-"date": "2026-11-08",
-"time": "All Day",
-"sortMin": 0,
-"sport": "Rowing",
-"opponent": "Frostbite Regatta",
-"homeAway": "Away",
-"location": "Mercer, NJ"
+"location": ""
 },
 {
 "id": "2026-11-08-rugby-sevens",
@@ -135,19 +115,19 @@
 "time": "TBD",
 "sortMin": 0,
 "sport": "Rugby Sevens",
-"opponent": "State Championship Day 2",
+"opponent": "State Championship - Day 2 @ Malvern PA",
 "homeAway": "Away",
-"location": "Malvern, PA"
+"location": ""
 },
 {
-"id": "2026-11-10-hockey-jva-blue-apac-heritage",
-"date": "2026-11-10",
-"time": "3:45 PM",
-"sortMin": 945,
-"sport": "Hockey - JVA Blue APAC Heritage",
-"opponent": "Upland Country Day School",
+"id": "2026-11-08-football-varsity",
+"date": "2026-11-08",
+"time": "2:00 PM",
+"sortMin": 840,
+"sport": "Football - Varsity",
+"opponent": "PCL 6A Classification Semis, St. Joseph's Preparatory School",
 "homeAway": "Away",
-"location": "Upland Country Day School"
+"location": "Wissahickon High School"
 },
 {
 "id": "2026-11-11-hockey-varsity-aaa",
@@ -176,8 +156,8 @@
 "sortMin": 975,
 "sport": "Hockey - JVAAA APAC Founders",
 "opponent": "St. Joseph's Preparatory School",
-"homeAway": "Away",
-"location": "UPenn Class of 1923 Arena"
+"homeAway": "Home",
+"location": "Hatfield Ice World"
 },
 {
 "id": "2026-11-13-hockey-jva-gold-shshl",
@@ -195,7 +175,7 @@
 "time": "4:00 PM",
 "sortMin": 960,
 "sport": "Hockey - Varsity AAA",
-"opponent": "Wyoming Seminary",
+"opponent": "Wyoming Seminary College Preparatory School",
 "homeAway": "Away",
 "location": "Rev Ice Center - Pittston"
 },
@@ -217,7 +197,7 @@
 "sport": "Hockey - Varsity AAA",
 "opponent": "St. Joseph's Preparatory School",
 "homeAway": "Away",
-"location": "UPenn Class of 1923 Arena"
+"location": "University of Pennsylvania - Class of 1923 Arena"
 },
 {
 "id": "2026-11-19-hockey-jva-gold-shshl",
@@ -267,7 +247,7 @@
 "sport": "Basketball - Varsity",
 "opponent": "Shipley (Scrimmage)",
 "homeAway": "Home",
-"location": "LSCHS"
+"location": "La Salle College High School"
 },
 {
 "id": "2026-11-30-basketball-jv",
@@ -277,7 +257,7 @@
 "sport": "Basketball - JV",
 "opponent": "Academy of the New Church",
 "homeAway": "Home",
-"location": "LSCHS"
+"location": "La Salle College High School"
 },
 {
 "id": "2026-11-30-swimming",
@@ -287,7 +267,7 @@
 "sport": "Swimming",
 "opponent": "Lichtner/Farrell Memorial Meet",
 "homeAway": "Home",
-"location": "LSCHS"
+"location": "La Salle College High School"
 },
 {
 "id": "2026-11-30-basketball-varsity",
@@ -297,7 +277,7 @@
 "sport": "Basketball - Varsity",
 "opponent": "Academy of the New Church (Scrimmage)",
 "homeAway": "Home",
-"location": "LSCHS"
+"location": "La Salle College High School"
 },
 {
 "id": "2026-12-01-bowling-varsity",
@@ -308,6 +288,16 @@
 "opponent": "Devon Preparatory School",
 "homeAway": "Home",
 "location": "Thunderbird Lanes (Warminster)"
+},
+{
+"id": "2026-12-01-squash-varsity",
+"date": "2026-12-01",
+"time": "4:00 PM",
+"sortMin": 960,
+"sport": "Squash - Varsity",
+"opponent": "@ Shipley",
+"homeAway": "Away",
+"location": ""
 },
 {
 "id": "2026-12-02-hockey-jvaaa-apac-founders",
@@ -330,6 +320,16 @@
 "location": "Ice Land Skating Center"
 },
 {
+"id": "2026-12-02-squash-varsity",
+"date": "2026-12-02",
+"time": "4:00 PM",
+"sortMin": 960,
+"sport": "Squash - Varsity",
+"opponent": "Lower Merion HS",
+"homeAway": "Away",
+"location": "Lower Merion High School"
+},
+{
 "id": "2026-12-03-bowling-varsity",
 "date": "2026-12-03",
 "time": "3:00 PM",
@@ -347,17 +347,7 @@
 "sport": "Basketball - Freshman",
 "opponent": "Devon Preparatory School (Scrimmage)",
 "homeAway": "Home",
-"location": "LSCHS"
-},
-{
-"id": "2026-12-03-swimming",
-"date": "2026-12-03",
-"time": "4:00 PM",
-"sortMin": 960,
-"sport": "Swimming",
-"opponent": "Archbishop Carroll/Devon Prep",
-"homeAway": "Home",
-"location": "LSCHS"
+"location": "La Salle College High School"
 },
 {
 "id": "2026-12-03-hockey-jva-blue-apac-heritage",
@@ -377,7 +367,7 @@
 "sport": "Hockey - Varsity AAA",
 "opponent": "Hill School",
 "homeAway": "Away",
-"location": "Eccleston Rink (The Hill School)"
+"location": "Eccleston Rink (Hall Arena, The Hill School)"
 },
 {
 "id": "2026-12-03-basketball-jv",
@@ -387,7 +377,17 @@
 "sport": "Basketball - JV",
 "opponent": "Devon Preparatory School (Scrimmage)",
 "homeAway": "Home",
-"location": "LSCHS"
+"location": "La Salle College High School"
+},
+{
+"id": "2026-12-04-squash-varsity",
+"date": "2026-12-04",
+"time": "All Day",
+"sortMin": 0,
+"sport": "Squash - Varsity",
+"opponent": "MASA Tournament @ Specter Center",
+"homeAway": "Away",
+"location": ""
 },
 {
 "id": "2026-12-04-wrestling-varsity",
@@ -395,9 +395,19 @@
 "time": "4:00 PM",
 "sortMin": 960,
 "sport": "Wrestling - Varsity",
-"opponent": "Solanco Mule Classic",
+"opponent": "Solanco Mule Classic @ Solanco HS",
 "homeAway": "Away",
-"location": "Solanco HS"
+"location": ""
+},
+{
+"id": "2026-12-04-swimming",
+"date": "2026-12-04",
+"time": "4:00 PM",
+"sortMin": 960,
+"sport": "Swimming",
+"opponent": "Archbishop Carroll/Devon Prep",
+"homeAway": "Home",
+"location": "La Salle College High School"
 },
 {
 "id": "2026-12-04-hockey-jvaaa-apac-founders",
@@ -415,9 +425,9 @@
 "time": "6:00 PM",
 "sortMin": 1080,
 "sport": "Basketball - Varsity",
-"opponent": "DePaul Catholic",
+"opponent": "DePaul Catholic @ Benet Academy HS (IL)",
 "homeAway": "Away",
-"location": "Benet Academy HS (IL)"
+"location": ""
 },
 {
 "id": "2026-12-04-hockey-jva-gold-shshl",
@@ -425,7 +435,7 @@
 "time": "9:00 PM",
 "sortMin": 1260,
 "sport": "Hockey - JVA Gold SHSHL",
-"opponent": "Plymouth-Whitemarsh SHS",
+"opponent": "Plymouth-Whitemarsh Senior HS",
 "homeAway": "Home",
 "location": "Hatfield Ice World"
 },
@@ -435,7 +445,7 @@
 "time": "All Day",
 "sortMin": 0,
 "sport": "Basketball - Varsity",
-"opponent": "Benet Academy HS (IL)",
+"opponent": "@ Benet Academy HS (IL)",
 "homeAway": "Away",
 "location": ""
 },
@@ -445,9 +455,9 @@
 "time": "10:00 AM",
 "sortMin": 600,
 "sport": "Wrestling - Varsity",
-"opponent": "Solanco Mule Classic",
+"opponent": "Solanco Mule Classic @ Solanco HS",
 "homeAway": "Away",
-"location": "Solanco HS"
+"location": ""
 },
 {
 "id": "2026-12-05-basketball-freshman",
@@ -467,7 +477,7 @@
 "sport": "Basketball - Freshman",
 "opponent": "Father Judge HS",
 "homeAway": "Home",
-"location": "LSCHS"
+"location": "La Salle College High School"
 },
 {
 "id": "2026-12-07-basketball-jv",
@@ -477,7 +487,7 @@
 "sport": "Basketball - JV",
 "opponent": "Father Judge HS",
 "homeAway": "Home",
-"location": "LSCHS"
+"location": "La Salle College High School"
 },
 {
 "id": "2026-12-08-bowling-varsity",
@@ -495,9 +505,9 @@
 "time": "3:30 PM",
 "sortMin": 930,
 "sport": "Swimming",
-"opponent": "Wissahickon SHS",
+"opponent": "Wissahickon Senior HS",
 "homeAway": "Away",
-"location": "Wissahickon HS"
+"location": "Wissahickon High School"
 },
 {
 "id": "2026-12-09-hockey-varsity-aaa",
@@ -527,7 +537,7 @@
 "sport": "Wrestling - Varsity",
 "opponent": "Berks Catholic HS",
 "homeAway": "Away",
-"location": "Berks Catholic HS"
+"location": "Berks Catholic High School"
 },
 {
 "id": "2026-12-09-wrestling-jv",
@@ -537,7 +547,7 @@
 "sport": "Wrestling - JV",
 "opponent": "Berks Catholic HS",
 "homeAway": "Away",
-"location": "Berks Catholic HS"
+"location": "Berks Catholic High School"
 },
 {
 "id": "2026-12-10-bowling-varsity",
@@ -557,7 +567,17 @@
 "sport": "Basketball - Freshman",
 "opponent": "Archbishop Ryan HS",
 "homeAway": "Home",
-"location": "LSCHS"
+"location": "La Salle College High School"
+},
+{
+"id": "2026-12-10-squash-varsity",
+"date": "2026-12-10",
+"time": "4:00 PM",
+"sortMin": 960,
+"sport": "Squash - Varsity",
+"opponent": "Conestoga HS",
+"homeAway": "Away",
+"location": "Conestoga High School"
 },
 {
 "id": "2026-12-10-hockey-jvaaa-apac-founders",
@@ -587,7 +607,7 @@
 "sport": "Basketball - JV",
 "opponent": "Archbishop Ryan HS",
 "homeAway": "Home",
-"location": "LSCHS"
+"location": "La Salle College High School"
 },
 {
 "id": "2026-12-10-basketball-varsity",
@@ -597,7 +617,17 @@
 "sport": "Basketball - Varsity",
 "opponent": "Archbishop Ryan HS",
 "homeAway": "Home",
-"location": "LSCHS"
+"location": "La Salle College High School"
+},
+{
+"id": "2026-12-12-indoor-track-field",
+"date": "2026-12-12",
+"time": "8:30 AM",
+"sortMin": 510,
+"sport": "Indoor Track & Field",
+"opponent": "TFCAofGP#1",
+"homeAway": "Away",
+"location": "Lehigh University"
 },
 {
 "id": "2026-12-12-wrestling-jv",
@@ -607,7 +637,17 @@
 "sport": "Wrestling - JV",
 "opponent": "Pennsbury JV Tournament",
 "homeAway": "Away",
-"location": "Pennsbury HS"
+"location": "Pennsbury High School"
+},
+{
+"id": "2026-12-12-squash-varsity",
+"date": "2026-12-12",
+"time": "10:00 AM",
+"sortMin": 600,
+"sport": "Squash - Varsity",
+"opponent": "Hill School",
+"homeAway": "Home",
+"location": "Springside Chestnut Hill"
 },
 {
 "id": "2026-12-13-basketball-freshman",
@@ -617,7 +657,7 @@
 "sport": "Basketball - Freshman",
 "opponent": "Upper Dublin HS",
 "homeAway": "Home",
-"location": "LSCHS"
+"location": "La Salle College High School"
 },
 {
 "id": "2026-12-13-basketball-jv",
@@ -627,7 +667,7 @@
 "sport": "Basketball - JV",
 "opponent": "Upper Dublin HS",
 "homeAway": "Home",
-"location": "LSCHS"
+"location": "La Salle College High School"
 },
 {
 "id": "2026-12-13-basketball-varsity",
@@ -637,7 +677,7 @@
 "sport": "Basketball - Varsity",
 "opponent": "Upper Dublin HS",
 "homeAway": "Home",
-"location": "LSCHS"
+"location": "La Salle College High School"
 },
 {
 "id": "2026-12-14-hockey-jva-blue-apac-heritage",
@@ -657,7 +697,17 @@
 "sport": "Basketball - Freshman",
 "opponent": "Malvern Preparatory School",
 "homeAway": "Home",
-"location": "LSCHS"
+"location": "La Salle College High School"
+},
+{
+"id": "2026-12-15-squash-varsity",
+"date": "2026-12-15",
+"time": "4:00 PM",
+"sortMin": 960,
+"sport": "Squash - Varsity",
+"opponent": "William Penn Charter School",
+"homeAway": "Away",
+"location": "William Penn Charter School"
 },
 {
 "id": "2026-12-16-hockey-varsity-aaa",
@@ -677,7 +727,7 @@
 "sport": "Basketball - JV",
 "opponent": "Archbishop Carroll HS",
 "homeAway": "Away",
-"location": "Archbishop Carroll HS"
+"location": "Archbishop Carroll High School"
 },
 {
 "id": "2026-12-16-basketball-varsity",
@@ -687,7 +737,7 @@
 "sport": "Basketball - Varsity",
 "opponent": "Archbishop Carroll HS",
 "homeAway": "Away",
-"location": "Archbishop Carroll HS"
+"location": "Archbishop Carroll High School"
 },
 {
 "id": "2026-12-16-wrestling-jv",
@@ -697,7 +747,7 @@
 "sport": "Wrestling - JV",
 "opponent": "Cardinal O'Hara HS",
 "homeAway": "Home",
-"location": "LSCHS"
+"location": "La Salle College High School"
 },
 {
 "id": "2026-12-16-wrestling-varsity",
@@ -707,7 +757,7 @@
 "sport": "Wrestling - Varsity",
 "opponent": "Cardinal O'Hara HS",
 "homeAway": "Home",
-"location": "LSCHS"
+"location": "La Salle College High School"
 },
 {
 "id": "2026-12-17-hockey-varsity-aaa",
@@ -730,6 +780,16 @@
 "location": "Thunderbird Lanes (Warminster)"
 },
 {
+"id": "2026-12-17-basketball-freshman",
+"date": "2026-12-17",
+"time": "3:45 PM",
+"sortMin": 945,
+"sport": "Basketball - Freshman",
+"opponent": "Souderton Senior HS",
+"homeAway": "Home",
+"location": "La Salle College High School"
+},
+{
 "id": "2026-12-17-swimming",
 "date": "2026-12-17",
 "time": "4:00 PM",
@@ -737,7 +797,17 @@
 "sport": "Swimming",
 "opponent": "Cardinal O'Hara HS",
 "homeAway": "Home",
-"location": "LSCHS"
+"location": "La Salle College High School"
+},
+{
+"id": "2026-12-17-squash-varsity",
+"date": "2026-12-17",
+"time": "4:00 PM",
+"sortMin": 960,
+"sport": "Squash - Varsity",
+"opponent": "Malvern Preparatory School",
+"homeAway": "Away",
+"location": "Malvern Preparatory School"
 },
 {
 "id": "2026-12-17-hockey-jvaaa-apac-founders",
@@ -757,7 +827,7 @@
 "sport": "Swimming",
 "opponent": "Cardinal Classic Diving",
 "homeAway": "Away",
-"location": "Upper Dublin HS"
+"location": "Upper Dublin High School"
 },
 {
 "id": "2026-12-18-basketball-jv",
@@ -767,7 +837,7 @@
 "sport": "Basketball - JV",
 "opponent": "Archbishop Wood HS",
 "homeAway": "Away",
-"location": "Archbishop Wood HS"
+"location": "Archbishop Wood High School"
 },
 {
 "id": "2026-12-18-basketball-freshman",
@@ -777,7 +847,7 @@
 "sport": "Basketball - Freshman",
 "opponent": "Archbishop Wood HS",
 "homeAway": "Away",
-"location": "Archbishop Wood HS"
+"location": "Archbishop Wood High School"
 },
 {
 "id": "2026-12-18-hockey-jva-gold-shshl",
@@ -785,7 +855,7 @@
 "time": "7:20 PM",
 "sortMin": 1160,
 "sport": "Hockey - JVA Gold SHSHL",
-"opponent": "Plymouth-Whitemarsh SHS",
+"opponent": "Plymouth-Whitemarsh Senior HS",
 "homeAway": "Away",
 "location": "Hatfield Ice World"
 },
@@ -797,7 +867,7 @@
 "sport": "Swimming",
 "opponent": "Cardinal Classic",
 "homeAway": "Away",
-"location": "Upper Dublin HS"
+"location": "Upper Dublin High School"
 },
 {
 "id": "2026-12-19-wrestling-jv",
@@ -807,7 +877,7 @@
 "sport": "Wrestling - JV",
 "opponent": "Jingle Brawl Tournament",
 "homeAway": "Away",
-"location": "Council Rock North HS"
+"location": "Council Rock North High School"
 },
 {
 "id": "2026-12-19-wrestling-varsity",
@@ -820,6 +890,26 @@
 "location": "University of Delaware"
 },
 {
+"id": "2026-12-19-indoor-track-field",
+"date": "2026-12-19",
+"time": "8:30 AM",
+"sortMin": 510,
+"sport": "Indoor Track & Field",
+"opponent": "TFCAofGP#2",
+"homeAway": "Away",
+"location": "Lehigh University"
+},
+{
+"id": "2026-12-19-squash-varsity",
+"date": "2026-12-19",
+"time": "10:00 AM",
+"sortMin": 600,
+"sport": "Squash - Varsity",
+"opponent": "Alumni Match",
+"homeAway": "Home",
+"location": "Springside Chestnut Hill"
+},
+{
 "id": "2026-12-19-basketball-jv",
 "date": "2026-12-19",
 "time": "12:00 PM",
@@ -827,7 +917,7 @@
 "sport": "Basketball - JV",
 "opponent": "Fels",
 "homeAway": "Home",
-"location": "LSCHS"
+"location": "La Salle College High School"
 },
 {
 "id": "2026-12-19-basketball-varsity",
@@ -837,7 +927,7 @@
 "sport": "Basketball - Varsity",
 "opponent": "Fels",
 "homeAway": "Home",
-"location": "LSCHS"
+"location": "La Salle College High School"
 },
 {
 "id": "2026-12-21-hockey-varsity-aaa",
@@ -867,7 +957,7 @@
 "sport": "Basketball - Freshman",
 "opponent": "Roman Catholic HS",
 "homeAway": "Home",
-"location": "LSCHS"
+"location": "La Salle College High School"
 },
 {
 "id": "2026-12-21-basketball-jv",
@@ -877,7 +967,7 @@
 "sport": "Basketball - JV",
 "opponent": "Roman Catholic HS",
 "homeAway": "Home",
-"location": "LSCHS"
+"location": "La Salle College High School"
 },
 {
 "id": "2026-12-21-basketball-varsity",
@@ -887,7 +977,7 @@
 "sport": "Basketball - Varsity",
 "opponent": "Roman Catholic HS",
 "homeAway": "Home",
-"location": "LSCHS"
+"location": "La Salle College High School"
 },
 {
 "id": "2026-12-22-hockey-jvaaa-apac-founders",
@@ -907,7 +997,7 @@
 "sport": "Wrestling - JV",
 "opponent": "Travis Manion 99 Memorial Dual",
 "homeAway": "Home",
-"location": "LSCHS"
+"location": "La Salle College High School"
 },
 {
 "id": "2026-12-22-wrestling-varsity",
@@ -917,7 +1007,7 @@
 "sport": "Wrestling - Varsity",
 "opponent": "Wilson HS (Reading)",
 "homeAway": "Home",
-"location": "LSCHS"
+"location": "La Salle College High School"
 },
 {
 "id": "2026-12-26-hockey-varsity-aaa",
@@ -955,9 +1045,9 @@
 "time": "10:00 AM",
 "sortMin": 600,
 "sport": "Wrestling - Varsity",
-"opponent": "Jim Thorpe Classic",
+"opponent": "Jim Thorpe Classic @ Jim Thorpe HS",
 "homeAway": "Away",
-"location": "Jim Thorpe HS"
+"location": ""
 },
 {
 "id": "2026-12-29-hockey-jvaaa-apac-founders",
@@ -977,7 +1067,7 @@
 "sport": "Basketball - Freshman",
 "opponent": "Roman Catholic HS",
 "homeAway": "Home",
-"location": "LSCHS"
+"location": "La Salle College High School"
 },
 {
 "id": "2026-12-29-basketball-jv",
@@ -987,7 +1077,7 @@
 "sport": "Basketball - JV",
 "opponent": "Roman Catholic HS",
 "homeAway": "Home",
-"location": "LSCHS"
+"location": "La Salle College High School"
 },
 {
 "id": "2026-12-29-hockey-varsity-aaa",
@@ -1008,5 +1098,505 @@
 "opponent": "O'Kane Tournament",
 "homeAway": "TBD",
 "location": "Hollydell Ice Arena"
+},
+{
+"id": "2026-12-30-indoor-track-field",
+"date": "2026-12-30",
+"time": "12:30 PM",
+"sortMin": 750,
+"sport": "Indoor Track & Field",
+"opponent": "LS Series # 1 Sprint Night",
+"homeAway": "Away",
+"location": "University of Pennsylvania - Franklin Field"
+},
+{
+"id": "2026-12-31-hockey-jvaaa-apac-founders",
+"date": "2026-12-31",
+"time": "TBD",
+"sortMin": 0,
+"sport": "Hockey - JVAAA APAC Founders",
+"opponent": "O'Kane Tournament",
+"homeAway": "TBD",
+"location": "Hollydell Ice Arena"
+},
+{
+"id": "2026-12-31-basketball-freshman",
+"date": "2026-12-31",
+"time": "10:00 AM",
+"sortMin": 600,
+"sport": "Basketball - Freshman",
+"opponent": "Salesianum School",
+"homeAway": "Away",
+"location": "Salesianum School"
+},
+{
+"id": "2026-12-31-basketball-jv",
+"date": "2026-12-31",
+"time": "11:30 AM",
+"sortMin": 690,
+"sport": "Basketball - JV",
+"opponent": "Salesianum School",
+"homeAway": "Away",
+"location": "Salesianum School"
+},
+{
+"id": "2026-12-31-basketball-varsity",
+"date": "2026-12-31",
+"time": "1:30 PM",
+"sortMin": 810,
+"sport": "Basketball - Varsity",
+"opponent": "Salesianum School",
+"homeAway": "Away",
+"location": "Salesianum School"
+},
+{
+"id": "2027-01-02-basketball-varsity",
+"date": "2027-01-02",
+"time": "All Day",
+"sortMin": 0,
+"sport": "Basketball - Varsity",
+"opponent": "Friends Select School",
+"homeAway": "Away",
+"location": "La Salle University"
+},
+{
+"id": "2027-01-02-indoor-track-field",
+"date": "2027-01-02",
+"time": "8:30 AM",
+"sortMin": 510,
+"sport": "Indoor Track & Field",
+"opponent": "TFCAofGP#4",
+"homeAway": "Away",
+"location": "Lehigh University"
+},
+{
+"id": "2027-01-04-basketball-jv",
+"date": "2027-01-04",
+"time": "4:00 PM",
+"sortMin": 960,
+"sport": "Basketball - JV",
+"opponent": "Abraham Lincoln HS",
+"homeAway": "Home",
+"location": "La Salle College High School"
+},
+{
+"id": "2027-01-04-basketball-varsity",
+"date": "2027-01-04",
+"time": "5:30 PM",
+"sortMin": 1050,
+"sport": "Basketball - Varsity",
+"opponent": "Abraham Lincoln HS",
+"homeAway": "Home",
+"location": "La Salle College High School"
+},
+{
+"id": "2027-01-05-bowling-varsity",
+"date": "2027-01-05",
+"time": "3:00 PM",
+"sortMin": 900,
+"sport": "Bowling - Varsity",
+"opponent": "Archbishop Ryan HS",
+"homeAway": "Home",
+"location": "Thunderbird Lanes (Warminster)"
+},
+{
+"id": "2027-01-05-wrestling-varsity",
+"date": "2027-01-05",
+"time": "6:00 PM",
+"sortMin": 1080,
+"sport": "Wrestling - Varsity",
+"opponent": "Devon Preparatory School",
+"homeAway": "Away",
+"location": "Devon Preparatory School"
+},
+{
+"id": "2027-01-06-hockey-jvaaa-apac-founders",
+"date": "2027-01-06",
+"time": "3:45 PM",
+"sortMin": 945,
+"sport": "Hockey - JVAAA APAC Founders",
+"opponent": "Devon Preparatory School",
+"homeAway": "Home",
+"location": "Wissahickon Skating Club"
+},
+{
+"id": "2027-01-06-hockey-varsity-aaa",
+"date": "2027-01-06",
+"time": "4:00 PM",
+"sortMin": 960,
+"sport": "Hockey - Varsity AAA",
+"opponent": "Salesianum School",
+"homeAway": "Away",
+"location": "University of Delaware"
+},
+{
+"id": "2027-01-06-hockey-jva-blue-apac-heritage",
+"date": "2027-01-06",
+"time": "4:00 PM",
+"sortMin": 960,
+"sport": "Hockey - JVA Blue APAC Heritage",
+"opponent": "Holy Ghost Preparatory School",
+"homeAway": "Home",
+"location": "Hatfield Ice World"
+},
+{
+"id": "2027-01-06-wrestling-varsity",
+"date": "2027-01-06",
+"time": "6:00 PM",
+"sortMin": 1080,
+"sport": "Wrestling - Varsity",
+"opponent": "St. Joseph's Preparatory School",
+"homeAway": "Home",
+"location": "La Salle College High School"
+},
+{
+"id": "2027-01-06-wrestling-jv",
+"date": "2027-01-06",
+"time": "6:00 PM",
+"sortMin": 1080,
+"sport": "Wrestling - JV",
+"opponent": "St. Joseph's Preparatory School",
+"homeAway": "Home",
+"location": "La Salle College High School"
+},
+{
+"id": "2027-01-06-indoor-track-field",
+"date": "2027-01-06",
+"time": "7:00 PM",
+"sortMin": 1140,
+"sport": "Indoor Track & Field",
+"opponent": "LS Series # 2 Distance Night",
+"homeAway": "Away",
+"location": "University of Pennsylvania - Franklin Field"
+},
+{
+"id": "2027-01-07-bowling-varsity",
+"date": "2027-01-07",
+"time": "3:30 PM",
+"sortMin": 930,
+"sport": "Bowling - Varsity",
+"opponent": "Archbishop Carroll HS",
+"homeAway": "Home",
+"location": "Thunderbird Lanes (Warminster)"
+},
+{
+"id": "2027-01-07-squash-varsity",
+"date": "2027-01-07",
+"time": "4:00 PM",
+"sortMin": 960,
+"sport": "Squash - Varsity",
+"opponent": "Germantown Friends School",
+"homeAway": "Away",
+"location": "Germantown Friends School"
+},
+{
+"id": "2027-01-07-hockey-jvaaa-apac-founders",
+"date": "2027-01-07",
+"time": "4:15 PM",
+"sortMin": 975,
+"sport": "Hockey - JVAAA APAC Founders",
+"opponent": "Holy Ghost Preparatory School",
+"homeAway": "Home",
+"location": "Hatfield Ice World"
+},
+{
+"id": "2027-01-07-hockey-jva-gold-shshl",
+"date": "2027-01-07",
+"time": "9:00 PM",
+"sortMin": 1260,
+"sport": "Hockey - JVA Gold SHSHL",
+"opponent": "Pennsbury HS",
+"homeAway": "Home",
+"location": "Grundy Recreation Center"
+},
+{
+"id": "2027-01-08-swimming",
+"date": "2027-01-08",
+"time": "3:15 PM",
+"sortMin": 915,
+"sport": "Swimming",
+"opponent": "Archbishop Ryan HS",
+"homeAway": "Away",
+"location": "Archbishop Ryan High School"
+},
+{
+"id": "2027-01-08-wrestling-varsity",
+"date": "2027-01-08",
+"time": "3:30 PM",
+"sortMin": 930,
+"sport": "Wrestling - Varsity",
+"opponent": "War on the Shore",
+"homeAway": "Away",
+"location": ""
+},
+{
+"id": "2027-01-08-basketball-jv",
+"date": "2027-01-08",
+"time": "5:15 PM",
+"sortMin": 1035,
+"sport": "Basketball - JV",
+"opponent": "Conwell-Egan Catholic HS",
+"homeAway": "Home",
+"location": "La Salle College High School"
+},
+{
+"id": "2027-01-08-hockey-jva-gold-shshl",
+"date": "2027-01-08",
+"time": "6:40 PM",
+"sortMin": 1120,
+"sport": "Hockey - JVA Gold SHSHL",
+"opponent": "North Penn HS",
+"homeAway": "Away",
+"location": "Bucks County Ice Sports Center (Formerly Face Off)"
+},
+{
+"id": "2027-01-08-basketball-varsity",
+"date": "2027-01-08",
+"time": "7:00 PM",
+"sortMin": 1140,
+"sport": "Basketball - Varsity",
+"opponent": "Conwell-Egan Catholic HS",
+"homeAway": "Home",
+"location": "La Salle College High School"
+},
+{
+"id": "2027-01-09-indoor-track-field",
+"date": "2027-01-09",
+"time": "8:30 AM",
+"sortMin": 510,
+"sport": "Indoor Track & Field",
+"opponent": "TFCAofGP#5",
+"homeAway": "Away",
+"location": "Lehigh University"
+},
+{
+"id": "2027-01-09-basketball-freshman",
+"date": "2027-01-09",
+"time": "12:00 PM",
+"sortMin": 720,
+"sport": "Basketball - Freshman",
+"opponent": "St. Joseph's Preparatory School",
+"homeAway": "Away",
+"location": "St. Joseph's Preparatory School"
+},
+{
+"id": "2027-01-11-basketball-freshman",
+"date": "2027-01-11",
+"time": "3:45 PM",
+"sortMin": 945,
+"sport": "Basketball - Freshman",
+"opponent": "Cardinal O'Hara HS",
+"homeAway": "Away",
+"location": "Cardinal O'Hara High School"
+},
+{
+"id": "2027-01-11-hockey-varsity-aaa",
+"date": "2027-01-11",
+"time": "4:00 PM",
+"sortMin": 960,
+"sport": "Hockey - Varsity AAA",
+"opponent": "Delbarton School",
+"homeAway": "Away",
+"location": "Aspen Ice Arena"
+},
+{
+"id": "2027-01-11-hockey-jvaaa-apac-founders",
+"date": "2027-01-11",
+"time": "4:15 PM",
+"sortMin": 975,
+"sport": "Hockey - JVAAA APAC Founders",
+"opponent": "St. Joseph's Preparatory School",
+"homeAway": "Away",
+"location": "University of Pennsylvania - Class of 1923 Arena"
+},
+{
+"id": "2027-01-11-basketball-jv",
+"date": "2027-01-11",
+"time": "5:15 PM",
+"sortMin": 1035,
+"sport": "Basketball - JV",
+"opponent": "Cardinal O'Hara HS",
+"homeAway": "Away",
+"location": "Cardinal O'Hara High School"
+},
+{
+"id": "2027-01-11-basketball-varsity",
+"date": "2027-01-11",
+"time": "7:00 PM",
+"sortMin": 1140,
+"sport": "Basketball - Varsity",
+"opponent": "Cardinal O'Hara HS",
+"homeAway": "Away",
+"location": "Cardinal O'Hara High School"
+},
+{
+"id": "2027-01-12-bowling-varsity",
+"date": "2027-01-12",
+"time": "3:00 PM",
+"sortMin": 900,
+"sport": "Bowling - Varsity",
+"opponent": "Bonner-Prendergast Catholic HS",
+"homeAway": "Away",
+"location": ""
+},
+{
+"id": "2027-01-12-swimming",
+"date": "2027-01-12",
+"time": "3:30 PM",
+"sortMin": 930,
+"sport": "Swimming",
+"opponent": "Malvern Preparatory School",
+"homeAway": "Away",
+"location": "Malvern Preparatory School"
+},
+{
+"id": "2027-01-12-hockey-jvaaa-apac-founders",
+"date": "2027-01-12",
+"time": "4:00 PM",
+"sortMin": 960,
+"sport": "Hockey - JVAAA APAC Founders",
+"opponent": "Salesianum School",
+"homeAway": "Away",
+"location": "University of Delaware"
+},
+{
+"id": "2027-01-13-basketball-freshman",
+"date": "2027-01-13",
+"time": "3:45 PM",
+"sortMin": 945,
+"sport": "Basketball - Freshman",
+"opponent": "Archbishop Wood HS",
+"homeAway": "Home",
+"location": "La Salle College High School"
+},
+{
+"id": "2027-01-13-hockey-varsity-aaa",
+"date": "2027-01-13",
+"time": "4:00 PM",
+"sortMin": 960,
+"sport": "Hockey - Varsity AAA",
+"opponent": "Malvern Preparatory School",
+"homeAway": "Home",
+"location": "Hatfield Ice World"
+},
+{
+"id": "2027-01-13-hockey-jva-blue-apac-heritage",
+"date": "2027-01-13",
+"time": "5:00 PM",
+"sortMin": 1020,
+"sport": "Hockey - JVA Blue APAC Heritage",
+"opponent": "Hill School",
+"homeAway": "Away",
+"location": "Eccleston Rink (Hall Arena, The Hill School)"
+},
+{
+"id": "2027-01-13-basketball-jv",
+"date": "2027-01-13",
+"time": "5:15 PM",
+"sortMin": 1035,
+"sport": "Basketball - JV",
+"opponent": "Archbishop Wood HS",
+"homeAway": "Home",
+"location": "La Salle College High School"
+},
+{
+"id": "2027-01-13-wrestling-varsity",
+"date": "2027-01-13",
+"time": "6:00 PM",
+"sortMin": 1080,
+"sport": "Wrestling - Varsity",
+"opponent": "Archbishop Carroll HS",
+"homeAway": "Away",
+"location": "Archbishop Carroll High School"
+},
+{
+"id": "2027-01-13-wrestling-jv",
+"date": "2027-01-13",
+"time": "6:00 PM",
+"sortMin": 1080,
+"sport": "Wrestling - JV",
+"opponent": "Archbishop Carroll HS",
+"homeAway": "Away",
+"location": "Archbishop Carroll High School"
+},
+{
+"id": "2027-01-13-basketball-varsity",
+"date": "2027-01-13",
+"time": "7:00 PM",
+"sortMin": 1140,
+"sport": "Basketball - Varsity",
+"opponent": "Archbishop Wood HS",
+"homeAway": "Home",
+"location": "La Salle College High School"
+},
+{
+"id": "2027-01-14-bowling-varsity",
+"date": "2027-01-14",
+"time": "3:00 PM",
+"sortMin": 900,
+"sport": "Bowling - Varsity",
+"opponent": "Conwell-Egan Catholic HS",
+"homeAway": "Away",
+"location": "Bristol Pike Lanes"
+},
+{
+"id": "2027-01-14-squash-varsity",
+"date": "2027-01-14",
+"time": "4:00 PM",
+"sortMin": 960,
+"sport": "Squash - Varsity",
+"opponent": "Springside Chestnut Hill",
+"homeAway": "Away",
+"location": "Springside Chestnut Hill"
+},
+{
+"id": "2027-01-14-hockey-jva-blue-apac-heritage",
+"date": "2027-01-14",
+"time": "4:15 PM",
+"sortMin": 975,
+"sport": "Hockey - JVA Blue APAC Heritage",
+"opponent": "Princeton Day School",
+"homeAway": "Home",
+"location": "Hatfield Ice World"
+},
+{
+"id": "2027-01-15-basketball-freshman",
+"date": "2027-01-15",
+"time": "3:45 PM",
+"sortMin": 945,
+"sport": "Basketball - Freshman",
+"opponent": "St. Joseph's Preparatory School",
+"homeAway": "Home",
+"location": "La Salle College High School"
+},
+{
+"id": "2027-01-15-basketball-jv",
+"date": "2027-01-15",
+"time": "5:15 PM",
+"sortMin": 1035,
+"sport": "Basketball - JV",
+"opponent": "St. Joseph's Preparatory School",
+"homeAway": "Home",
+"location": "La Salle College High School"
+},
+{
+"id": "2027-01-15-indoor-track-field",
+"date": "2027-01-15",
+"time": "6:00 PM",
+"sortMin": 1080,
+"sport": "Indoor Track & Field",
+"opponent": "TFCAofGP#6",
+"homeAway": "Away",
+"location": "Lehigh University"
+},
+{
+"id": "2027-01-15-basketball-varsity",
+"date": "2027-01-15",
+"time": "7:00 PM",
+"sortMin": 1140,
+"sport": "Basketball - Varsity",
+"opponent": "St. Joseph's Preparatory School",
+"homeAway": "Home",
+"location": "La Salle College High School"
 }
 ]
