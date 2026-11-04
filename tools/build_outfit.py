@@ -80,12 +80,17 @@ def main():
         a = np.array(img)[:, :, 3] > ALPHA_MIN
         if name.startswith("push"):
             ax = 0.0
-        elif cfg:   # anchor on the boots so props (trumpet, trophy) don't shift him sideways
+        elif cfg and cfg.get("anchor") != "body":   # anchor on the boots so props (trumpet, trophy) don't shift him sideways
             feet = a[int(a.shape[0] * 0.8):]
             ax = round(float(ndimage.center_of_mass(feet)[1]), 1)
         else:
             ax = round(float(ndimage.center_of_mass(a)[1]), 1)
         frames[name] = {"x": x, "y": 0, "w": img.width, "h": img.height, "ax": ax}
+        if cfg and cfg.get("keepBounce"):   # keep airborne frames off the ground (running bounce)
+            kb = cfg["keepBounce"]
+            lift = (kb["baseline"] - (f["y1"] - (f["y0"] // kb["cell"]) * kb["cell"])) * scale
+            if lift > 0.5:
+                frames[name]["dy"] = round(lift, 1)
         crops.append((x, img))
         x += img.width + GAP
 
@@ -99,7 +104,7 @@ def main():
     out = Path(__file__).resolve().parent.parent / "sprites" / f"{outfit}.js"
     out.parent.mkdir(exist_ok=True)
     out.write_text("(window.EXPLORER_OUTFITS = window.EXPLORER_OUTFITS || {})[" + json.dumps(outfit) + "] = "
-                   + json.dumps({"src": src, "frames": frames, **({"plan": cfg["plan"], "moves": cfg["moves"]} if cfg else {})}) + ";\n")
+                   + json.dumps({"src": src, "frames": frames, **({k: cfg[k] for k in ("plan", "moves", "walk") if k in cfg} if cfg else {})}) + ";\n")
     print(f"{outfit}: scale {scale:.4f}, atlas {atlas.width}x{atlas.height}, {out.stat().st_size // 1024} KB -> {out}")
 
 

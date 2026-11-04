@@ -1,0 +1,20 @@
+{
+  "_about": "Cross country: runs (6-frame cycle, faster than walking, keeps the airborne bounce), then slows, stops, bends over and catches his breath. Poses in sheet order.",
+  "poses": ["run1", "run2", "run3", "run4", "run5", "run6", "decelerate", "stopped", "bend", "breath1", "breath2", "breath3"],
+  "referencePose": "stopped",
+  "sizePercent": 100,
+  "anchor": "body",
+  "keepBounce": { "cell": 1200, "baseline": 1140 },
+  "walk": { "frames": ["run1", "run2", "run3", "run4", "run5", "run6"], "fps": 10, "speed": 1.5 },
+  "plan": ["recover", "walk", "pause", "walk"],
+  "moves": {
+    "recover": [
+      ["decelerate", 0.25], ["stopped", 0.35], ["bend", 0.35],
+      ["breath1", 0.33], ["breath2", 0.33], ["breath3", 0.33], ["breath2", 0.33],
+      ["breath1", 0.33], ["breath2", 0.33], ["breath3", 0.33], ["breath2", 0.33],
+      ["breath1", 0.33], ["breath2", 0.33], ["breath3", 0.5],
+      ["bend", 0.35], ["stopped", 0.6]
+    ],
+    "pause": [["stopped", 1.5]]
+  }
+}

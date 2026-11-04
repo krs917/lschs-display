@@ -381,12 +381,15 @@ body { display: flex; align-items: center; justify-content: center; overflow: hi
     const planNow = () => (SP.plan && SP.moves ? SP.plan : S.plan);
     const routine = (m) => SP.moves && SP.moves[m];
     const routineDur = (m) => routine(m).reduce((t, st) => t + st[1], 0);
+    // Walk cycle: outfits can supply their own (cross country runs: 6 frames, faster). speed is stage-heights per second.
+    const WALK = { frames: ['walk1', 'walk2', 'walk3', 'walk4'], fps: 7, speed: 0.55 };
+    const walkNow = () => SP.walk || WALK;
 
     function frameFor() {
       const t = S.t;
       const r = routine(S.mode);
       if (r) { let acc = 0; for (const [pose, sec] of r) { acc += sec; if (t < acc) return pose; } return r[r.length - 1][0]; }
-      if (S.mode === 'walk') return ['walk1', 'walk2', 'walk3', 'walk4'][Math.floor(S.wf) % 4];
+      if (S.mode === 'walk') { const w = walkNow().frames; return w[Math.floor(S.wf) % w.length]; }
       if (S.mode === 'watch') return t < 0.35 || t > S.dur - 0.3 ? 'watch1' : 'watch2';
       if (S.mode === 'tie') return Math.floor(t / 0.32) % 2 ? 'tie2' : 'tie1';
       if (S.mode === 'point') return 'point';
@@ -414,14 +417,14 @@ body { display: flex; align-items: center; justify-content: center; overflow: hi
       ctx.clearRect(0, 0, canvas.width, canvas.height);
       if (!ready) return;
       const k = (ch * dpr) / STD;
-      let name = frameFor(); if (!F[name]) name = F.stopped ? 'stopped' : 'walk1'; const f = F[name];
+      let name = frameFor(); if (!F[name]) name = F.stopped ? 'stopped' : walkNow().frames[0]; const f = F[name];
       const ax = name.startsWith('push') ? PUSH_AX : f.ax;
       const x = S.x * dpr, base = ch * HEAD * dpr;
       ctx.save();
       ctx.translate(x, 0);
       ctx.scale(S.dir, 1);
       ctx.imageSmoothingQuality = 'high';
-      ctx.drawImage(img, f.x, f.y, f.w, f.h, -ax * k, base - f.h * k, f.w * k, f.h * k);
+      ctx.drawImage(img, f.x, f.y, f.w, f.h, -ax * k, base - (f.h + (f.dy || 0)) * k, f.w * k, f.h * k);
       ctx.restore();
       const n = F.pushUp ? count() : 0;
       if (n) {
@@ -442,8 +445,8 @@ body { display: flex; align-items: center; justify-content: center; overflow: hi
       if (S.x < 0) S.x = minX + (maxX - minX) * 0.3;
       S.t += dt;
       if (S.mode === 'walk') {
-        S.wf += dt * 7;
-        S.x += S.dir * ch * 0.55 * dt;
+        S.wf += dt * walkNow().fps;
+        S.x += S.dir * ch * walkNow().speed * dt;
         if (S.x > maxX) { S.x = maxX; S.dir = -1; }
         if (S.x < minX) { S.x = minX; S.dir = 1; }
       }
