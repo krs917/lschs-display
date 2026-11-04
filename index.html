@@ -19,7 +19,7 @@ body { display: flex; align-items: center; justify-content: center; overflow: hi
 <script>
 /* Stand-alone runtime: loads the JSON files in /data, pulls live weather, and redraws the page. */
 (function () {
-  const IDS = ['calendar', 'bells', 'athletics', 'announcements', 'overrides', 'weather'];
+  const IDS = ['calendar', 'bells', 'athletics', 'announcements', 'slides', 'overrides', 'weather'];
   const store = {}; const draws = {}; const order = []; const onData = [];
   const ok = (data) => ({ status: 'ok', data, columns: data.length ? Object.keys(data[0]) : [] });
   function runAll() {
@@ -132,7 +132,14 @@ body { display: flex; align-items: center; justify-content: center; overflow: hi
 .sg-empty { color: var(--mute); margin: 4px 0 0; font-size: clamp(.9rem, 1.1vw, 1.3rem); }
 .sg-scroll { max-height: clamp(16rem, 40vh, 34rem); overflow: hidden; scrollbar-width: none; }
 .sg-scroll thead th { position: sticky; top: 0; background: var(--panel); z-index: 1; }
-.sg-spot img { width: 100%; height: auto; display:block; border-radius: var(--cds-radius); }
+.sg-slide { animation: sgFade .9s ease-out; }
+@keyframes sgFade { from { opacity: 0; } to { opacity: 1; } }
+.sg-slide-frame { aspect-ratio: 16 / 9; background: #00264d; border-radius: var(--cds-radius); overflow: hidden; display: flex; align-items: center; justify-content: center; }
+.sg-slide-frame img { width: 100%; height: 100%; object-fit: contain; display: block; }
+.sg-slide-text { flex-direction: column; padding: 6%; text-align: center; gap: 4%; }
+.sg-dots { display: flex; justify-content: center; gap: 6px; margin-top: 6px; }
+.sg-dots span { width: 8px; height: 8px; border-radius: 50%; background: var(--line); }
+.sg-dots span.on { background: var(--gold); }
 .sg-spot-cap { margin-top: 8px; color: var(--mute); font-size: clamp(.8rem, 1vw, 1.15rem); }
 .sg-spot-title { font-size: clamp(1.3rem, 2vw, 2.4rem); font-weight: 600; }
 .sg-list { list-style:none; margin:0; padding:0; font-size: clamp(.85rem, 1.1vw, 1.3rem); }
@@ -183,6 +190,8 @@ body { display: flex; align-items: center; justify-content: center; overflow: hi
   .sg-scroll { flex: 1; min-height: 0; max-height: none; }
   #spotlight { flex: none; padding: .6cqw; }
   #spotlight .sg-label { display: none; }
+  .sg-dots { gap: .35cqw; margin-top: .35cqw; }
+  .sg-dots span { width: .45cqw; height: .45cqw; }
   .sg-spot-cap { font-size: .85cqw; margin-top: .35cqw; }
   .sg-spot-title { font-size: 1.8cqw; }
   #calendar { flex: 1; min-height: 0; }
@@ -583,24 +592,48 @@ body { display: flex; align-items: center; justify-content: center; overflow: hi
   function activeAnn() {
     const a = ok('announcements'); if (!a) return null;
     const t = iso(new Date());
-    return a.filter((x) => (!x.start || x.start <= t) && (!x.end || x.end >= t));
+    return a.concat(ok('slides') || []).filter((x) => (!x.start || x.start <= t) && (!x.end || x.end >= t));
   }
-  function showAnn(el, list, i) {
+  const SLIDE_SECONDS = 25;
+  const imgOk = (v) => typeof v === 'string' && (v.startsWith('data:image/') || (/^[\w\-./ %]+\.(png|jpe?g|gif|webp|svg)$/i.test(v) && !v.startsWith('/') && !v.includes('..')));
+  function showAnn(el, st) {
+    const list = st.list;
     el.replaceChildren();
     if (!list || !list.length) { el.textContent = '—'; return; }
-    const a = list[i % list.length]; const wh = 'id=' + a.id;
-    if (typeof a.image === 'string' && a.image.startsWith('data:image/')) {
-      const img = mk('img'); img.src = a.image; img.alt = (a.title || '') + '. ' + (a.detail || ''); el.append(img);
-      el.append(mark('div', 'announcements', 'title', wh, a.title, 'sg-spot-cap'));
+    const i = st.i % list.length; const a = list[i]; const wh = 'id=' + a.id;
+    const slide = mk('div', 'sg-slide');
+    if (imgOk(a.image)) {
+      const frame = mk('div', 'sg-slide-frame');
+      const img = mk('img'); img.src = a.image; img.alt = (a.title || '') + (a.detail ? '. ' + a.detail : '');
+      frame.append(img); slide.append(frame);
+      if (a.title) slide.append(mark('div', 'announcements', 'title', wh, a.title, 'sg-spot-cap'));
     } else {
-      el.append(mark('div', 'announcements', 'title', wh, a.title, 'sg-spot-title'));
-      if (a.detail) el.append(mark('div', 'announcements', 'detail', wh, a.detail, 'sg-spot-cap'));
+      const frame = mk('div', 'sg-slide-frame sg-slide-text');
+      frame.append(mark('div', 'announcements', 'title', wh, a.title, 'sg-spot-title'));
+      if (a.detail) frame.append(mark('div', 'announcements', 'detail', wh, a.detail, 'sg-spot-cap'));
+      slide.append(frame);
+    }
+    el.append(slide);
+    if (list.length > 1) {
+      const dots = mk('div', 'sg-dots');
+      list.forEach((_, k) => dots.append(mk('span', k === i ? 'on' : '')));
+      el.append(dots);
     }
   }
+  function schedule(el, st) {
+    clearTimeout(st.timer);
+    if (!st.list || st.list.length < 2) return;
+    const a = st.list[st.i % st.list.length];
+    const secs = Math.max(5, Number(a && a.seconds) || SLIDE_SECONDS);
+    st.timer = setTimeout(() => { st.i = (st.i + 1) % st.list.length; showAnn(el, st); schedule(el, st); }, secs * 1000);
+  }
   dash.draw('spot', {
-    mount(el) { const st = { i: 0, list: null }; st.timer = setInterval(() => { st.i++; showAnn(el, st.list, st.i); }, 12000); return st; },
-    update(el, st) { st.list = activeAnn(); showAnn(el, st.list, st.i); },
-    unmount(el, st) { clearInterval(st.timer); }
+    mount(el) { return { i: 0, list: null, sig: null, timer: 0 }; },
+    update(el, st) {
+      const list = activeAnn(); const sig = list ? list.map((x) => x.id + '|' + (x.image || '').length + '|' + (x.seconds || '')).join(',') : null;
+      if (sig !== st.sig || !el.firstChild) { st.sig = sig; st.list = list; if (!list || st.i >= list.length) st.i = 0; showAnn(el, st); schedule(el, st); }
+    },
+    unmount(el, st) { clearTimeout(st.timer); }
   });
 
   dash.draw('upcoming', (el) => {

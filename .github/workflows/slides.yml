@@ -1,0 +1,28 @@
+name: Build slide list
+
+on:
+  push:
+    paths:
+      - "slides/**"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Build data/slides.json
+        run: python3 .github/scripts/build_slides.py
+      - name: Commit if changed
+        run: |
+          if git diff --quiet -- data/slides.json && git ls-files --error-unmatch data/slides.json >/dev/null 2>&1; then
+            echo "Slide list unchanged"; exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/slides.json
+          git commit -m "Update slide list"
+          git push

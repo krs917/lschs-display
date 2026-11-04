@@ -24,7 +24,8 @@ Point each TV's browser or signage player at that link and run it full screen (k
 |---|---|---|
 | Snow delay or a one-day schedule change | `data/overrides.json` | Add `{"date": "2026-12-10", "schedule": "2-Hour Delay", "note": "Weather delay"}`. Schedule names: Regular, Community Time, Liturgy, PM Meeting, Extended Homeroom, PM Block, AM Block, 2-Hour Delay, No School |
 | Games | `data/athletics.json` | One entry per game: date, time, sortMin, sport, opponent, homeAway (Home/Away/TBD), location |
-| Spotlight slides | `data/announcements.json` | Each item has title, detail, start, end dates and an optional image |
+| Spotlight slides (images) | `slides/` folder | Upload an image to add it, delete it to remove it. Optional dates in the name: `2026-11-16_2026-11-18_turkey-bowl.png`. Each slide shows 25 seconds; alphabetical order |
+| Text-only spotlight slides | `data/announcements.json` | Items with title, detail, start, end, optional `seconds` |
 | Letter days / special days | `data/calendar.json` | One row per date |
 | Bell times | `data/bells.json` | Times per schedule |
 
