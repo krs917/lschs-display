@@ -1,0 +1,18 @@
+{
+  "_about": "Musician: walks carrying a trumpet, stops, raises it, plays, lowers it. Poses in sheet order.",
+  "poses": ["walk1", "walk2", "walk3", "walk4", "stopped", "raise1", "raise2", "play1", "play2", "play3", "lower1", "lower2"],
+  "referencePose": "stopped",
+  "sizePercent": 100,
+  "plan": ["trumpet", "walk", "pause", "walk"],
+  "moves": {
+    "trumpet": [
+      ["stopped", 0.5], ["raise1", 0.3], ["raise2", 0.3],
+      ["play1", 0.2], ["play2", 0.2], ["play3", 0.2], ["play2", 0.2],
+      ["play1", 0.2], ["play2", 0.2], ["play3", 0.2], ["play2", 0.2],
+      ["play1", 0.2], ["play2", 0.2], ["play3", 0.2], ["play2", 0.2],
+      ["play1", 0.2], ["play2", 0.2], ["play3", 0.4],
+      ["lower1", 0.3], ["lower2", 0.3], ["stopped", 0.4]
+    ],
+    "pause": [["stopped", 1.8]]
+  }
+}

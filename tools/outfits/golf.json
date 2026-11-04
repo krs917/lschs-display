@@ -1,0 +1,17 @@
+{
+  "_about": "Golf: walks, stops, pulls out the PIAA plaque, shows it off, lifts it overhead, puts it away. Poses in sheet order. Drawn at 95% so the overhead trophy fits above the gold line.",
+  "poses": ["walk1", "walk2", "walk3", "walk4", "stopped", "retrieve", "bringForward", "hold1", "hold2", "lift", "overhead1", "overhead2"],
+  "referencePose": "stopped",
+  "sizePercent": 95,
+  "plan": ["trophy", "walk", "pause", "walk"],
+  "moves": {
+    "trophy": [
+      ["stopped", 0.4], ["retrieve", 0.4], ["bringForward", 0.4],
+      ["hold1", 0.4], ["hold2", 0.4], ["hold1", 0.4], ["hold2", 0.4],
+      ["lift", 0.35],
+      ["overhead1", 0.3], ["overhead2", 0.3], ["overhead1", 0.3], ["overhead2", 0.3], ["overhead1", 0.3], ["overhead2", 0.5],
+      ["lift", 0.35], ["hold1", 0.6], ["bringForward", 0.35], ["retrieve", 0.35], ["stopped", 0.4]
+    ],
+    "pause": [["stopped", 1.8]]
+  }
+}

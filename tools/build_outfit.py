@@ -9,6 +9,10 @@ with space between figures and a transparent background:
 Usage (needs: pip install pillow numpy scipy):
   python3 tools/build_outfit.py path/to/sprite_sheet.png christmas
 
+Outfits with their own routine (musician, golf) also have tools/outfits/<outfit>.json listing
+the poses in sheet order, the reference pose for sizing, and the moves as [pose, seconds] steps.
+The script uses that file automatically when it exists.
+
 Writes sprites/<outfit>.js in the same format as sprites.js, so index.html can load it.
 Then add a row for the outfit to data/mascot.json.
 """
@@ -51,23 +55,36 @@ def main():
     if len(sys.argv) != 3:
         sys.exit(__doc__)
     sheet, outfit = sys.argv[1], sys.argv[2]
+    cfg_path = Path(__file__).resolve().parent / "outfits" / f"{outfit}.json"
+    cfg = json.loads(cfg_path.read_text()) if cfg_path.exists() else None
+    poses = cfg["poses"] if cfg else POSES
     rgba = np.array(Image.open(sheet).convert("RGBA"))
     figs = find_figures(rgba)
-    if len(figs) != len(POSES):
-        sys.exit(f"Found {len(figs)} figures, expected {len(POSES)}. Check for touching poses or stray marks.")
+    if len(figs) != len(poses):
+        sys.exit(f"Found {len(figs)} figures, expected {len(poses)}. Check for touching poses or stray marks.")
 
     # one scale for the whole sheet, from the standing (non-walking, non-push-up) poses
-    standing = [f["y1"] - f["y0"] for f, n in zip(figs, POSES) if n[:4] in ("watc", "tie1", "tie2", "poin")]
-    scale = STANDING_HEIGHT / float(np.median(standing))
+    if cfg:
+        ref = figs[poses.index(cfg["referencePose"])]
+        scale = STANDING_HEIGHT * cfg.get("sizePercent", 100) / 100 / float(ref["y1"] - ref["y0"])
+    else:
+        standing = [f["y1"] - f["y0"] for f, n in zip(figs, POSES) if n[:4] in ("watc", "tie1", "tie2", "poin")]
+        scale = STANDING_HEIGHT / float(np.median(standing))
 
     crops, frames, x = [], {}, 0
-    for f, name in zip(figs, POSES):
+    for f, name in zip(figs, poses):
         crop = rgba[f["y0"]:f["y1"], f["x0"]:f["x1"]].copy()
         crop[:, :, 3] = np.where(f["mask"], crop[:, :, 3], 0)
         img = Image.fromarray(crop)
         img = img.resize((max(1, round(img.width * scale)), max(1, round(img.height * scale))), Image.LANCZOS)
         a = np.array(img)[:, :, 3] > ALPHA_MIN
-        ax = 0.0 if name.startswith("push") else round(float(ndimage.center_of_mass(a)[1]), 1)
+        if name.startswith("push"):
+            ax = 0.0
+        elif cfg:   # anchor on the boots so props (trumpet, trophy) don't shift him sideways
+            feet = a[int(a.shape[0] * 0.8):]
+            ax = round(float(ndimage.center_of_mass(feet)[1]), 1)
+        else:
+            ax = round(float(ndimage.center_of_mass(a)[1]), 1)
         frames[name] = {"x": x, "y": 0, "w": img.width, "h": img.height, "ax": ax}
         crops.append((x, img))
         x += img.width + GAP
@@ -82,7 +99,7 @@ def main():
     out = Path(__file__).resolve().parent.parent / "sprites" / f"{outfit}.js"
     out.parent.mkdir(exist_ok=True)
     out.write_text("(window.EXPLORER_OUTFITS = window.EXPLORER_OUTFITS || {})[" + json.dumps(outfit) + "] = "
-                   + json.dumps({"src": src, "frames": frames}) + ";\n")
+                   + json.dumps({"src": src, "frames": frames, **({"plan": cfg["plan"], "moves": cfg["moves"]} if cfg else {})}) + ";\n")
     print(f"{outfit}: scale {scale:.4f}, atlas {atlas.width}x{atlas.height}, {out.stat().st_size // 1024} KB -> {out}")
 
 
