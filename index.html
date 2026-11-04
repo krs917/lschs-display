@@ -594,7 +594,7 @@ body { display: flex; align-items: center; justify-content: center; overflow: hi
     const t = iso(new Date());
     return a.concat(ok('slides') || []).filter((x) => (!x.start || x.start <= t) && (!x.end || x.end >= t));
   }
-  const SLIDE_SECONDS = 25;
+  const SLIDE_SECONDS = 15;
   const imgOk = (v) => typeof v === 'string' && (v.startsWith('data:image/') || (/^[\w\-./ %]+\.(png|jpe?g|gif|webp|svg)$/i.test(v) && !v.startsWith('/') && !v.includes('..')));
   function showAnn(el, st) {
     const list = st.list;
