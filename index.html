@@ -19,7 +19,7 @@ body { display: flex; align-items: center; justify-content: center; overflow: hi
 <script>
 /* Stand-alone runtime: loads the JSON files in /data, pulls live weather, and redraws the page. */
 (function () {
-  const IDS = ['calendar', 'bells', 'athletics', 'announcements', 'slides', 'overrides', 'weather'];
+  const IDS = ['calendar', 'bells', 'athletics', 'announcements', 'slides', 'overrides', 'mascot', 'weather'];
   const store = {}; const draws = {}; const order = []; const onData = [];
   const ok = (data) => ({ status: 'ok', data, columns: data.length ? Object.keys(data[0]) : [] });
   function runAll() {
@@ -318,21 +318,59 @@ body { display: flex; align-items: center; justify-content: center; overflow: hi
     return b.filter((r) => r.schedule === schedule).sort((a, c) => a.order - c.order);
   }
   // ---- Explorer mascot: sprite animation along the gold line ----
+  // Which outfit to wear today: ?outfit=<name> in the URL (for testing), else data/mascot.json, else default.
+  // mascot.json rows: {"outfit": "christmas", "start": "12-01", "end": "12-23"}. Full dates (2026-11-20) win over yearly ones (MM-DD).
+  function pickOutfit() {
+    const q = new URLSearchParams(location.search).get('outfit');
+    if (q) return q;
+    const rows = (ok('mascot') || []).filter((r) => r && r.outfit && r.start);
+    const t = iso(new Date()), md = t.slice(5);
+    const hit = (r, v) => { const a = r.start, b = r.end || r.start; return a <= b ? v >= a && v <= b : v >= a || v <= b; };
+    const once = rows.find((r) => r.start.length === 10 && hit(r, t));
+    if (once) return once.outfit;
+    const yearly = rows.find((r) => r.start.length === 5 && hit(r, md));
+    return yearly ? yearly.outfit : 'default';
+  }
   function makeExplorer(stage) {
-    const SP = window.EXPLORER_SPRITES;
+    let SP = window.EXPLORER_SPRITES;
     const canvas = document.createElement('canvas');
     canvas.className = 'sg-ex-canvas';
     stage.replaceChildren(canvas);
     if (!SP) return { stop() {} };
-    const F = SP.frames;
-    const img = new Image();
+    let F = SP.frames;
+    let img = new Image();
     let ready = false;
     img.onload = () => { ready = true; };
     img.src = SP.src;
     const ctx = canvas.getContext('2d');
     const reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-    const STD = 232; // standing frame height in the atlas
-    const PUSH_AX = F.pushUp.w / 2;
+    const STD = 232; // standing frame height in the atlas (all outfits are built to this height)
+    let PUSH_AX = F.pushUp.w / 2;
+
+    // ---- outfits: sprites/<name>.js, loaded only when needed; any failure keeps the current outfit ----
+    let outfit = 'default', wanted = 'default';
+    const missing = new Set();
+    function wear(name, sp) {
+      const next = new Image();
+      next.onload = () => {
+        if (name !== wanted) return;
+        SP = sp; F = sp.frames; PUSH_AX = F.pushUp.w / 2; img = next; ready = true; outfit = name;
+        if (reduce) draw();
+      };
+      next.src = sp.src;
+    }
+    function setOutfit(name) {
+      if (!name || name === wanted || missing.has(name)) return;
+      wanted = name;
+      if (name === 'default') return wear(name, window.EXPLORER_SPRITES);
+      const have = window.EXPLORER_OUTFITS && window.EXPLORER_OUTFITS[name];
+      if (have) return wear(name, have);
+      const tag = document.createElement('script');
+      tag.src = 'sprites/' + encodeURIComponent(name) + '.js';
+      tag.onload = () => { const sp = window.EXPLORER_OUTFITS && window.EXPLORER_OUTFITS[name]; if (sp) wear(name, sp); };
+      tag.onerror = () => { console.warn('Explorer outfit not found:', name); missing.add(name); if (wanted === name) wanted = outfit; };
+      document.head.appendChild(tag);
+    }
     const S = { x: -1, dir: 1, mode: 'walk', t: 0, dur: 4, last: 0, raf: 0, next: 0, wf: 0,
       plan: ['watch', 'walk', 'tie', 'walk', 'pushups', 'walk', 'point'] };
     const durs = { watch: 2.6, tie: 2.2, point: 2.0, pushups: 0.5 + 5 * 1.0 + 0.3 };
@@ -413,13 +451,13 @@ body { display: flex; align-items: center; justify-content: center; overflow: hi
     if (reduce) {
       S.mode = 'still'; S.x = 80;
       img.addEventListener('load', draw);
-      return { stop() {}, redraw: draw };
+      return { stop() {}, redraw: draw, setOutfit };
     }
     S.raf = requestAnimationFrame(step);
-    return { stop() { cancelAnimationFrame(S.raf); }, redraw: draw, S };
+    return { stop() { cancelAnimationFrame(S.raf); }, redraw: draw, setOutfit, S };
   }
 
-  dash.draw('explorer', { mount(el) { return makeExplorer(el); }, update(el, ex) { if (ex && ex.redraw) ex.redraw(); }, unmount(el, ex) { if (ex) ex.stop(); } });
+  dash.draw('explorer', { mount(el) { return makeExplorer(el); }, update(el, ex) { if (ex && ex.setOutfit) ex.setOutfit(pickOutfit()); if (ex && ex.redraw) ex.redraw(); }, unmount(el, ex) { if (ex) ex.stop(); } });
 
   const ALL = ['clock', 'date', 'letter', 'letterSub', 'sched', 'events', 'now', 'wx', 'bellName', 'bells', 'gamesToday', 'gamesNext', 'spot', 'upcoming'];
 

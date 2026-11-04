@@ -1,0 +1,20 @@
+[
+ {
+  "outfit": "st-patricks",
+  "start": "03-17",
+  "end": "03-17",
+  "note": "Every year on St. Patrick's Day"
+ },
+ {
+  "outfit": "christmas",
+  "start": "12-01",
+  "end": "12-23",
+  "note": "Every year, December 1 to 23"
+ },
+ {
+  "outfit": "dress-down",
+  "start": "2026-01-01",
+  "end": "2026-01-01",
+  "note": "Example one-day row. Copy it, set start and end to the date, and use dress-down or business-casual."
+ }
+]
