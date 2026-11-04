@@ -85,7 +85,7 @@ body { display: flex; align-items: center; justify-content: center; overflow: hi
 .sg * { box-sizing: border-box; }
 .sg-head { display:flex; flex-wrap:wrap; align-items:flex-end; justify-content:space-between; gap: 8px 24px; border-bottom: 3px solid var(--gold); padding-bottom: clamp(8px,1vw,16px); margin-bottom: clamp(12px,1.4vw,24px); }
 .sg-stage { order: 3; flex: 0 0 100%; position: relative; height: clamp(64px, 6.2vw, 124px); margin-bottom: calc(-1 * clamp(8px,1vw,16px) - 1px); pointer-events: none; color: transparent; }
-.sg-ex-canvas { position: absolute; left: 0; bottom: 0; width: 100%; height: 100%; display: block; }
+.sg-ex-canvas { position: absolute; left: 0; bottom: 0; width: 100%; height: 120%; display: block; }
 .sg-wordmark { display:block; height: clamp(44px, 5.2vw, 104px); width:auto; }
 .sg-mascot { height: 1.5em; width:auto; align-self: center; }
 .sg-motto { display:flex; justify-content:center; margin-top: clamp(12px,1.4vw,24px); }
@@ -345,7 +345,10 @@ body { display: flex; align-items: center; justify-content: center; overflow: hi
     const ctx = canvas.getContext('2d');
     const reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
     const STD = 232; // standing frame height in the atlas (all outfits are built to this height)
-    let PUSH_AX = F.pushUp.w / 2;
+    const HEAD = 1.2; // canvas is 20% taller than the stage, for poses that reach higher (golf trophy)
+    const widest = (fr) => Object.values(fr).reduce((a, b) => (b.w > a.w ? b : a));
+    let PUSH_AX = F.pushUp ? F.pushUp.w / 2 : 0;
+    let HALF_W = (F.pushUp || widest(F)).w / 2;
 
     // ---- outfits: sprites/<name>.js, loaded only when needed; any failure keeps the current outfit ----
     let outfit = 'default', wanted = 'default';
@@ -354,7 +357,7 @@ body { display: flex; align-items: center; justify-content: center; overflow: hi
       const next = new Image();
       next.onload = () => {
         if (name !== wanted) return;
-        SP = sp; F = sp.frames; PUSH_AX = F.pushUp.w / 2; img = next; ready = true; outfit = name;
+        SP = sp; F = sp.frames; PUSH_AX = F.pushUp ? F.pushUp.w / 2 : 0; HALF_W = (F.pushUp || widest(F)).w / 2; img = next; ready = true; outfit = name; S.next = 0;
         if (reduce) draw();
       };
       next.src = sp.src;
@@ -374,9 +377,15 @@ body { display: flex; align-items: center; justify-content: center; overflow: hi
     const S = { x: -1, dir: 1, mode: 'walk', t: 0, dur: 4, last: 0, raf: 0, next: 0, wf: 0,
       plan: ['watch', 'walk', 'tie', 'walk', 'pushups', 'walk', 'point'] };
     const durs = { watch: 2.6, tie: 2.2, point: 2.0, pushups: 0.5 + 5 * 1.0 + 0.3 };
+    // Outfits with their own routine (musician, golf) carry plan + moves: each move is [pose, seconds] steps.
+    const planNow = () => (SP.plan && SP.moves ? SP.plan : S.plan);
+    const routine = (m) => SP.moves && SP.moves[m];
+    const routineDur = (m) => routine(m).reduce((t, st) => t + st[1], 0);
 
     function frameFor() {
       const t = S.t;
+      const r = routine(S.mode);
+      if (r) { let acc = 0; for (const [pose, sec] of r) { acc += sec; if (t < acc) return pose; } return r[r.length - 1][0]; }
       if (S.mode === 'walk') return ['walk1', 'walk2', 'walk3', 'walk4'][Math.floor(S.wf) % 4];
       if (S.mode === 'watch') return t < 0.35 || t > S.dur - 0.3 ? 'watch1' : 'watch2';
       if (S.mode === 'tie') return Math.floor(t / 0.32) % 2 ? 'tie2' : 'tie1';
@@ -397,24 +406,24 @@ body { display: flex; align-items: center; justify-content: center; overflow: hi
     function draw() {
       const dpr = window.devicePixelRatio || 1;
       const cw = stage.clientWidth || 600, ch = stage.clientHeight || 90;
-      if (canvas.width !== Math.round(cw * dpr) || canvas.height !== Math.round(ch * dpr)) {
-        canvas.width = Math.round(cw * dpr); canvas.height = Math.round(ch * dpr);
-        canvas.style.width = cw + 'px'; canvas.style.height = ch + 'px';
+      if (canvas.width !== Math.round(cw * dpr) || canvas.height !== Math.round(ch * HEAD * dpr)) {
+        canvas.width = Math.round(cw * dpr); canvas.height = Math.round(ch * HEAD * dpr);
+        canvas.style.width = cw + 'px'; canvas.style.height = (ch * HEAD) + 'px';
       }
       ctx.setTransform(1, 0, 0, 1, 0, 0);
       ctx.clearRect(0, 0, canvas.width, canvas.height);
       if (!ready) return;
       const k = (ch * dpr) / STD;
-      const name = frameFor(); const f = F[name];
+      let name = frameFor(); if (!F[name]) name = F.stopped ? 'stopped' : 'walk1'; const f = F[name];
       const ax = name.startsWith('push') ? PUSH_AX : f.ax;
-      const x = S.x * dpr, base = ch * dpr;
+      const x = S.x * dpr, base = ch * HEAD * dpr;
       ctx.save();
       ctx.translate(x, 0);
       ctx.scale(S.dir, 1);
       ctx.imageSmoothingQuality = 'high';
       ctx.drawImage(img, f.x, f.y, f.w, f.h, -ax * k, base - f.h * k, f.w * k, f.h * k);
       ctx.restore();
-      const n = count();
+      const n = F.pushUp ? count() : 0;
       if (n) {
         const r = 11 * dpr * (ch / 90);
         const bx = x + S.dir * (F.pushUp.w * 0.35) * k, by = base - F.pushUp.h * k - r * 1.4 - Math.abs(Math.sin(S.t * 6)) * 3 * dpr;
@@ -428,7 +437,7 @@ body { display: flex; align-items: center; justify-content: center; overflow: hi
     function step(ts) {
       const dt = S.last ? Math.min(0.1, (ts - S.last) / 1000) : 0; S.last = ts;
       const cw = stage.clientWidth || 600, ch = stage.clientHeight || 90;
-      const k = ch / STD; const half = (F.pushUp.w / 2) * k + 4;
+      const k = ch / STD; const half = HALF_W * k + 4;
       const minX = half, maxX = Math.max(minX + 1, cw - half);
       if (S.x < 0) S.x = minX + (maxX - minX) * 0.3;
       S.t += dt;
@@ -439,9 +448,9 @@ body { display: flex; align-items: center; justify-content: center; overflow: hi
         if (S.x < minX) { S.x = minX; S.dir = 1; }
       }
       if (S.t > S.dur) {
-        const m = S.plan[S.next % S.plan.length]; S.next++;
+        const plan = planNow(); const m = plan[S.next % plan.length]; S.next++;
         S.mode = m; S.t = 0;
-        S.dur = m === 'walk' ? 2.5 + Math.random() * 3.5 : durs[m];
+        S.dur = m === 'walk' ? 2.5 + Math.random() * 3.5 : routine(m) ? routineDur(m) : (durs[m] || 2);
         if (m === 'walk' && Math.random() < 0.3) S.dir *= -1;
       }
       draw();
