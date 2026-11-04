@@ -28,5 +28,12 @@ Point each TV's browser or signage player at that link and run it full screen (k
 | Text-only spotlight slides | `data/announcements.json` | Items with title, detail, start, end, optional `seconds` |
 | Letter days / special days | `data/calendar.json` | One row per date |
 | Bell times | `data/bells.json` | Times per schedule |
+| Explorer's outfit | `data/mascot.json` | Add `{"outfit": "dress-down", "start": "2026-11-20", "end": "2026-11-20"}` for one day. Yearly rows use month-day only (`"start": "12-01", "end": "12-23"`). One-day rows win over yearly ones. Outfits: default, dress-down, business-casual, st-patricks, christmas. Test any outfit by adding `?outfit=christmas` to the page link |
 
-Dates are `YYYY-MM-DD`. Note that everything in a public repo can be seen by anyone with the link.
+Dates are `YYYY-MM-DD`.
+
+## Adding a new Explorer outfit
+
+1. Make an 11-pose sprite sheet in the same order as the others (walk 1-4, watch 1-2, adjust outfit 1-2, push-up up, push-up down, pointing) on a transparent background, with space between poses.
+2. Run `python3 tools/build_outfit.py sprite_sheet.png football` (needs `pip install pillow numpy scipy`). This writes `sprites/football.js`.
+3. Commit the new file and add rows for `football` to `data/mascot.json`. Note that everything in a public repo can be seen by anyone with the link.
