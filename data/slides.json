@@ -5,5 +5,12 @@
   "start": "2026-11-02",
   "end": "2026-11-18",
   "image": "slides/2026-11-02_2026-11-18_turkey-bowl.jpg"
+ },
+ {
+  "id": "slide-nov4-ct-jpg",
+  "title": "Nov4 CT",
+  "start": null,
+  "end": null,
+  "image": "slides/Nov4%20CT.jpg"
  }
 ]
