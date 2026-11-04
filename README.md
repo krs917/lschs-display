@@ -28,7 +28,7 @@ Point each TV's browser or signage player at that link and run it full screen (k
 | Text-only spotlight slides | `data/announcements.json` | Items with title, detail, start, end, optional `seconds` |
 | Letter days / special days | `data/calendar.json` | One row per date |
 | Bell times | `data/bells.json` | Times per schedule |
-| Explorer's outfit | `data/mascot.json` | Add `{"outfit": "dress-down", "start": "2026-11-20", "end": "2026-11-20"}` for one day. Yearly rows use month-day only (`"start": "12-01", "end": "12-23"`). One-day rows win over yearly ones. Outfits: default, dress-down, business-casual, st-patricks, christmas, football, hockey, musician (plays the trumpet), golf (shows off the PIAA plaque). Test any outfit by adding `?outfit=christmas` to the page link |
+| Explorer's outfit | `data/mascot.json` | Add `{"outfit": "dress-down", "start": "2026-11-20", "end": "2026-11-20"}` for one day. Yearly rows use month-day only (`"start": "12-01", "end": "12-23"`). One-day rows win over yearly ones. Outfits: default, dress-down, business-casual, st-patricks, christmas, football, hockey, cross-country (runs, then catches his breath), musician (plays the trumpet), golf (shows off the PIAA plaque). Test any outfit by adding `?outfit=christmas` to the page link |
 
 Dates are `YYYY-MM-DD`.
 
